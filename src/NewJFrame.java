@@ -14,6 +14,7 @@ public class NewJFrame extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     App novo = new App();
+
     public NewJFrame() {
         initComponents();
     }
@@ -27,6 +28,7 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         campoNome = new javax.swing.JTextField();
         botaoNome = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -35,6 +37,15 @@ public class NewJFrame extends javax.swing.JFrame {
         campoMensagem = new javax.swing.JTextField();
         numeroContato = new javax.swing.JLabel();
         menuContatos = new javax.swing.JComboBox<>();
+        numeroUsuario = new javax.swing.JLabel();
+        menuStatus = new javax.swing.JComboBox<>();
+        numerosContatos = new javax.swing.JLabel();
+        contatoUltima = new javax.swing.JLabel();
+        contatoConexão = new javax.swing.JLabel();
+        botaoUsuario1 = new javax.swing.JRadioButton();
+        botaoUsuario2 = new javax.swing.JRadioButton();
+        botaoIniciar = new javax.swing.JButton();
+        campoUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +75,42 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        numeroUsuario.setText("Usuario");
+
+        menuStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponivel", "Ausente", "Offline" }));
+        menuStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuStatusActionPerformed(evt);
+            }
+        });
+
+        numerosContatos.setText("Seus Contatos");
+
+        contatoUltima.setText("Ultima Conexão :");
+
+        buttonGroup1.add(botaoUsuario1);
+        botaoUsuario1.setText("jRadioButton1");
+        botaoUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoUsuario1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(botaoUsuario2);
+        botaoUsuario2.setText("jRadioButton2");
+        botaoUsuario2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoUsuario2ActionPerformed(evt);
+            }
+        });
+
+        botaoIniciar.setText("Inserir Usuario");
+        botaoIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoIniciarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,24 +120,56 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoNome)
-                    .addComponent(menuContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(menuContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numeroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numerosContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoIniciar)
+                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(numeroContato, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoMensagem)
                     .addComponent(campoMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(contatoUltima)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(contatoConexão, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(botaoUsuario1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoUsuario2))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(numeroContato, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numeroContato, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numeroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menuStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contatoUltima, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contatoConexão, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuContatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botaoIniciar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(numerosContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(menuContatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoUsuario1)
+                    .addComponent(botaoUsuario2))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(campoMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -98,7 +177,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoMensagem)
                     .addComponent(botaoNome))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -106,23 +185,94 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void botaoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNomeActionPerformed
         // TODO add your handling code here:
-       if(novo.addConversa(campoNome.getText())==0){
+        if (novo.addConversa(campoNome.getText()) == 0) {
             menuContatos.addItem(campoNome.getText());
-       }
-        
+        }
+
         numeroContato.setText(novo.getConversa(campoNome.getText()).getTelefoneContato());
+        atualizarChat();
+        areaConversa.setEditable(false);
+        botaoUsuario1.setText(numeroUsuario.getText());
+        botaoUsuario2.setText(numeroContato.getText());
     }//GEN-LAST:event_botaoNomeActionPerformed
 
     private void botaoMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMensagemActionPerformed
         // TODO add your handling code here:
-        novo.enviarMensagem(numeroContato.getText(), campoMensagem.getText());
-        areaConversa.setText(novo.receberConversa(numeroContato.getText()));
+        novo.enviarMensagem(botaoUsuario2.getText(), campoMensagem.getText());
+        atualizarChat();
+
     }//GEN-LAST:event_botaoMensagemActionPerformed
 
     private void menuContatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuContatosActionPerformed
-//       areaConversa.setText(novo.receberConversa());
-//        nome.setText();
+
+       
+        numeroContato.setText(novo.getConversa(menuContatos.getSelectedItem().toString()).getTelefoneContato());
+        botaoUsuario2.setText(numeroContato.getText());
+        atualizarChat();
+        botaoUsuario1.setSelected(true);
     }//GEN-LAST:event_menuContatosActionPerformed
+
+    private void menuStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuStatusActionPerformed
+
+        novo.setStatus(menuStatus.getSelectedIndex());
+
+    }//GEN-LAST:event_menuStatusActionPerformed
+
+    private void botaoUsuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUsuario2ActionPerformed
+        novo.setTelefoneUsuario(botaoUsuario2.getText());
+        if (menuStatus.getSelectedIndex()==2) {
+            contatoConexão.setText("Offline");
+        } else {
+            ultimaConexao(2);
+        }
+        numeroContato.setText(botaoUsuario1.getText());
+    }//GEN-LAST:event_botaoUsuario2ActionPerformed
+
+    private void botaoUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUsuario1ActionPerformed
+        novo.setTelefoneUsuario(botaoUsuario1.getText());
+        if (menuStatus.getSelectedIndex()==2) {
+            contatoConexão.setText("Offline");
+        } else {
+            ultimaConexao(1);
+        }
+        numeroContato.setText(botaoUsuario2.getText());
+    }//GEN-LAST:event_botaoUsuario1ActionPerformed
+
+    private void botaoIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIniciarActionPerformed
+        novo.setTelefoneUsuario(campoUsuario.getText());
+        numeroUsuario.setText(campoUsuario.getText());
+        campoUsuario.setVisible(false);
+        botaoIniciar.setVisible(false);
+    }//GEN-LAST:event_botaoIniciarActionPerformed
+    public void atualizarChat() {
+        StringBuilder conversa = new StringBuilder();
+        for (Mensagem texto : novo.getConversa(botaoUsuario2.getText()).getMensagens()) {
+            conversa.append(texto + "\n");
+        }
+        areaConversa.setText(conversa.toString());
+    }
+
+    public void ultimaConexao(int usuario) {
+        String saida = "";
+        if (usuario == 1) {
+            for (Mensagem data : novo.getConversa(botaoUsuario2.getText()).getMensagens()) {
+                if (data.getEmissor().equalsIgnoreCase(botaoUsuario2.getText())) {
+                    saida = data.getData();
+                }
+            }
+        } else {
+            for (Mensagem data : novo.getConversa(botaoUsuario2.getText()).getMensagens()) {
+                if (data.getEmissor().equalsIgnoreCase(botaoUsuario1.getText())) {
+                    saida = data.getData();
+                }
+            }
+        }
+        if (saida.isEmpty()) {
+            contatoConexão.setText("Offline");
+        } else {
+            contatoConexão.setText(saida);
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -161,12 +311,22 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaConversa;
+    private javax.swing.JButton botaoIniciar;
     private javax.swing.JButton botaoMensagem;
     private javax.swing.JButton botaoNome;
+    private javax.swing.JRadioButton botaoUsuario1;
+    private javax.swing.JRadioButton botaoUsuario2;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField campoMensagem;
     private javax.swing.JTextField campoNome;
+    private javax.swing.JTextField campoUsuario;
+    private javax.swing.JLabel contatoConexão;
+    private javax.swing.JLabel contatoUltima;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> menuContatos;
+    private javax.swing.JComboBox<String> menuStatus;
     private javax.swing.JLabel numeroContato;
+    private javax.swing.JLabel numeroUsuario;
+    private javax.swing.JLabel numerosContatos;
     // End of variables declaration//GEN-END:variables
 }

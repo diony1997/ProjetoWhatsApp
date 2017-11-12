@@ -26,7 +26,7 @@ public class App {
         if (aux == 0) {
             Conversa e = new Conversa(telefoneContato);
             conversas.add(e);
-            
+
         }
         return aux;
     }
@@ -39,15 +39,6 @@ public class App {
         }
     }
 
-    public String receberConversa(String nome) {
-        String saida = "";
-        for (Conversa conversa : conversas) {
-            if (conversa.getTelefoneContato().equalsIgnoreCase(nome)) {
-                saida += conversa.receberMensagens() + "\n";
-            }
-        }
-        return saida;
-    }
 
     public Conversa getConversa(String nome) {
         for (Conversa conversa : conversas) {
@@ -58,8 +49,20 @@ public class App {
         return null;
     }
 
-    public ArrayList<Conversa> getConversas() {
-        return conversas;
+    public void setTelefoneUsuario(String telefoneUsuario) {
+        this.telefoneUsuario = telefoneUsuario;
+    }
+
+
+
+    public void setStatus(int status) {
+        if (status > 0 && status < 4) {
+            this.status = status;
+        }
+    }
+
+    public int getStatus() {
+        return status;
     }
 
 }

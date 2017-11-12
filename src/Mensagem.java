@@ -46,10 +46,13 @@ public class Mensagem {
         return status;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public String getData() {
+        return data.format(formato);
     }
-
+    @Override
+    public String toString(){
+    return texto+"\n("+data.format(formato)+")\n";
+}
 //    public DateTimeFormatter getFormato() {
 //        return formato;
 //    }
