@@ -1,22 +1,15 @@
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Diony
- */
-public class Mensagem {
+public class Mensagem implements Serializable{
 
     private String emissor, texto;
     private int status;
     private LocalDateTime data;
-    private DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm dd-MM");
+    //formata a data para o formato desejado
+    private static DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm dd-MM");
 
     public Mensagem(String emissor, String texto, LocalDateTime data) {
         this.emissor = emissor;
@@ -33,7 +26,7 @@ public class Mensagem {
         return texto+"\n("+data.format(formato)+")\n";
                 
     }
-
+//getters
     public String getEmissor() {
         return emissor;
     }
@@ -46,12 +39,12 @@ public class Mensagem {
         return status;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public String getData() {
+        return data.format(formato);
     }
-
-//    public DateTimeFormatter getFormato() {
-//        return formato;
-//    }
+    @Override
+    public String toString(){
+    return texto+"\n("+data.format(formato)+")\n";
+}
 
 }
