@@ -1,17 +1,9 @@
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Diony
- */
-public class Conversa {
+public class Conversa implements Serializable {
 
     private ArrayList<Mensagem> mensagens = new ArrayList();
     private String telefoneContato;
@@ -24,7 +16,9 @@ public class Conversa {
     public void addMensagem(String autor, String texto) {
         LocalDateTime data = LocalDateTime.now();
         Mensagem e = new Mensagem(autor, texto, data);
+     
         mensagens.add(e);
+           enviado(e);
     }
 
     public String receberMensagens() {
@@ -45,7 +39,16 @@ public class Conversa {
         }
         return busca;
     }
-
+//aumenta o status
+    public void enviado(Mensagem e) {
+        e.validarStatus();
+        recebido(e);
+    }
+//aumenta o status
+    public void recebido(Mensagem e) {
+        e.validarStatus();
+    }
+//getters
     public String getTelefoneContato() {
         return telefoneContato;
     }
@@ -57,5 +60,5 @@ public class Conversa {
     public LocalDateTime getUltima() {
         return ultima;
     }
-    
+
 }

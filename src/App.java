@@ -1,21 +1,19 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Diony
- */
-public class App {
+public class App implements Serializable {
 
     private ArrayList<Conversa> conversas = new ArrayList();
-    private String nomeUsuario, telefoneUsuario;
+    private String telefoneUsuario;
     private int status;
+    private ArrayList<String> contatos = new ArrayList();
 
+    public void addContato(String texto) {
+        contatos.add(texto);
+    }
+
+//confere se ja existe uma conversa com o contato se não cria
     public int addConversa(String telefoneContato) {
         int aux = 0;
         for (Conversa conversa : conversas) {
@@ -30,6 +28,7 @@ public class App {
         }
         return aux;
     }
+//recebe o nome do usuario alternativo\mensagem e cria uma mensagem com o nome do usuario que enviou
 
     public void enviarMensagem(String telefoneContato, String texto) {
         for (Conversa conversa : conversas) {
@@ -38,22 +37,11 @@ public class App {
             }
         }
     }
-
-
-    public Conversa getConversa(String nome) {
-        for (Conversa conversa : conversas) {
-            if (conversa.getTelefoneContato().equalsIgnoreCase(nome)) {
-                return conversa;
-            }
-        }
-        return null;
-    }
+//setters e getters
 
     public void setTelefoneUsuario(String telefoneUsuario) {
         this.telefoneUsuario = telefoneUsuario;
     }
-
-
 
     public void setStatus(int status) {
         if (status > 0 && status < 4) {
@@ -65,4 +53,24 @@ public class App {
         return status;
     }
 
+    public ArrayList<Conversa> getConversas() {
+        return conversas;
+    }
+
+    public String getTelefoneUsuario() {
+        return telefoneUsuario;
+    }
+
+    public Conversa getConversa(String nome) {
+        for (Conversa conversa : conversas) {
+            if (conversa.getTelefoneContato().equalsIgnoreCase(nome)) {
+                return conversa;
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<String> getContatos() {
+        return contatos;
+    }
 }
