@@ -1,4 +1,5 @@
-
+//Diony Augusto RA: 20781283
+//Paulo Ricardo RA: 20933327
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -466,8 +467,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private void campoPesquisaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_campoPesquisaMouseClicked
         campoPesquisa.setText("");
     }//GEN-LAST:event_campoPesquisaMouseClicked
-    //Confere/cria um arquivo de backup e uma nova classe app
-
+    
+//Confere/cria um arquivo de backup e uma nova classe app
     public App checarBackup() {
         if (arquivo.exists()) {
             try (FileInputStream reader = new FileInputStream(arquivo); ObjectInputStream leitor = new ObjectInputStream(reader)) {
@@ -488,8 +489,8 @@ public class NewJFrame extends javax.swing.JFrame {
         }
 
     }
-//atualiza a caixa de mensagens com as mensagens da conversa
 
+//atualiza a caixa de mensagens com as mensagens da conversa
     public void atualizarChat() {
         StringBuilder conversa = new StringBuilder();
         String nome = "";
@@ -531,8 +532,8 @@ public class NewJFrame extends javax.swing.JFrame {
             contatoConexão.setText(saida);
         }
     }
-//atualiza a caixa historico com a ultima mensagem de cada conversa
 
+//atualiza a caixa historico com a ultima mensagem de cada conversa
     public void atualizarHistorico() {
         StringBuilder s = new StringBuilder();
         int tamanho = 0;

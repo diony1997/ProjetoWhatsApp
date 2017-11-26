@@ -28,8 +28,8 @@ public class App implements Serializable {
         }
         return aux;
     }
-//recebe o nome do usuario alternativo\mensagem e cria uma mensagem com o nome do usuario que enviou
 
+//recebe o nome do usuario alternativo\mensagem e cria uma mensagem com o nome do usuario que enviou
     public void enviarMensagem(String telefoneContato, String texto) {
         for (Conversa conversa : conversas) {
             if (conversa.getTelefoneContato().equalsIgnoreCase(telefoneContato)) {
@@ -37,8 +37,8 @@ public class App implements Serializable {
             }
         }
     }
-//setters e getters
 
+//setters e getters
     public void setTelefoneUsuario(String telefoneUsuario) {
         this.telefoneUsuario = telefoneUsuario;
     }
